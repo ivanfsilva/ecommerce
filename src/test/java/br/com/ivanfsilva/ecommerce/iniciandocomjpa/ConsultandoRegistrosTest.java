@@ -1,41 +1,14 @@
 package br.com.ivanfsilva.ecommerce.iniciandocomjpa;
 
+import br.com.ivanfsilva.ecommerce.EntityManagerTest;
 import br.com.ivanfsilva.ecommerce.model.Produto;
-import org.junit.*;
+import org.junit.Assert;
+import org.junit.Test;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
-public class ConsultandoRegistrosTest {
-
-    private static EntityManagerFactory entityManagerFactory;
-
-    private EntityManager entityManager;
-
-    @BeforeClass
-    public static void setUpBeforeClass() {
-        entityManagerFactory = Persistence
-                .createEntityManagerFactory("Ecommerce-PU");
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() {
-        entityManagerFactory.close();
-    }
-
-    @Before
-    public void setUp() {
-        entityManager = entityManagerFactory.createEntityManager();
-    }
-
-    @After
-    public void tearDown() {
-        entityManager.close();
-    }
+public class ConsultandoRegistrosTest extends EntityManagerTest {
 
     @Test
-    public void buscarPorIdentificador() {
+    public void busarPorIdentificador() {
         Produto produto = entityManager.find(Produto.class, 1);
 //        Produto produto = entityManager.getReference(Produto.class, 1);
 
