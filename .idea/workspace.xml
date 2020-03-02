@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce775799-9096-4ebc-a417-032287e59f62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/banco-de-dados/dados-iniciais.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/util/IniciarUnidadeDePersistencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/br/com/ivanfsilva/ecommerce/iniciandocomjpa/ConsultandoRegistrosTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/banco-de-dados/dados-iniciais.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/banco-de-dados/dados-iniciais.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +35,28 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="IniciarUnidadeDePersistencia" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.ivanfsilva.ecommerce.util.IniciarUnidadeDePersistencia" />
+      <module name="ecommerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.ivanfsilva.ecommerce.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.IniciarUnidadeDePersistencia" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -45,7 +68,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583093876429</updated>
-      <workItem from="1583093883897" duration="1740000" />
+      <workItem from="1583093883897" duration="4151000" />
+      <workItem from="1583166625014" duration="1441000" />
     </task>
     <servers />
   </component>
@@ -57,5 +81,33 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="530" y="52" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1583094781215" />
+    <state width="1481" height="667" key="GridCell.Tab.0.bottom" timestamp="1583167369428">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1481" height="667" key="GridCell.Tab.0.bottom/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1583098050779" />
+    <state width="1481" height="667" key="GridCell.Tab.0.bottom/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1583167369428" />
+    <state width="1481" height="667" key="GridCell.Tab.0.center" timestamp="1583167369428">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1481" height="667" key="GridCell.Tab.0.center/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1583098050779" />
+    <state width="1481" height="667" key="GridCell.Tab.0.center/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1583167369428" />
+    <state width="1481" height="667" key="GridCell.Tab.0.left" timestamp="1583167369428">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1481" height="667" key="GridCell.Tab.0.left/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1583098050779" />
+    <state width="1481" height="667" key="GridCell.Tab.0.left/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1583167369428" />
+    <state width="1481" height="667" key="GridCell.Tab.0.right" timestamp="1583167369428">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1481" height="667" key="GridCell.Tab.0.right/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1583098050779" />
+    <state width="1481" height="667" key="GridCell.Tab.0.right/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1583167369428" />
+    <state x="527" y="199" key="chooseDestDirectoryDialog" timestamp="1583096101217">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="527" y="199" key="chooseDestDirectoryDialog/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1583096101217" />
+    <state x="39" y="86" key="new project wizard" timestamp="1583096632375">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="39" y="86" key="new project wizard/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1583096632375" />
   </component>
 </project>
