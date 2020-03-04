@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce775799-9096-4ebc-a417-032287e59f62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Categoria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Estoque.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/ItemPedido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/NotaFiscal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/PagamentoBoleto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/PagamentoCartao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Pedido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/SexoCliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/StatusPagamento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/StatusPedido.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Cliente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -41,6 +49,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.com.ivanfsilva.ecommerce.model" />
       <recent name="br.com.ivanfsilva.ecommerce.iniciandocomjpa" />
     </key>
   </component>
@@ -110,7 +119,8 @@
       <workItem from="1583093883897" duration="4151000" />
       <workItem from="1583166625014" duration="6328000" />
       <workItem from="1583342484032" duration="5972000" />
-      <workItem from="1583352324068" duration="547000" />
+      <workItem from="1583352324068" duration="1772000" />
+      <workItem from="1583363179800" duration="2217000" />
     </task>
     <servers />
   </component>
@@ -151,9 +161,10 @@
     </state>
     <state x="527" y="199" key="chooseDestDirectoryDialog/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1583096101217" />
     <state x="527" y="199" key="chooseDestDirectoryDialog/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1583170375090" />
-    <state x="394" y="219" key="com.intellij.ide.util.TipDialog" timestamp="1583352350666">
+    <state x="394" y="219" key="com.intellij.ide.util.TipDialog" timestamp="1583363185561">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
+    <state x="394" y="219" key="com.intellij.ide.util.TipDialog/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1583363185561" />
     <state x="394" y="219" key="com.intellij.ide.util.TipDialog/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1583352350666" />
     <state x="39" y="86" key="new project wizard" timestamp="1583096632375">
       <screen x="0" y="0" width="1536" height="864" />

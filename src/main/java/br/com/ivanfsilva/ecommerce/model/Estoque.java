@@ -11,7 +11,7 @@ import javax.persistence.Id;
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-public class Cliente {
+public class Estoque {
 
     @Id
     @EqualsAndHashCode.Include
