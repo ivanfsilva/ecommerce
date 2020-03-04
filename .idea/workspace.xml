@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce775799-9096-4ebc-a417-032287e59f62" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/ivanfsilva/ecommerce/iniciandocomjpa/OperacoesComTransacaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/ivanfsilva/ecommerce/iniciandocomjpa/OperacoesComTransacaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Produto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +36,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java/br/com/ivanfsilva/ecommerce" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -105,7 +109,8 @@
       <updated>1583093876429</updated>
       <workItem from="1583093883897" duration="4151000" />
       <workItem from="1583166625014" duration="6328000" />
-      <workItem from="1583342484032" duration="4162000" />
+      <workItem from="1583342484032" duration="5972000" />
+      <workItem from="1583352324068" duration="547000" />
     </task>
     <servers />
   </component>
@@ -137,11 +142,19 @@
     </state>
     <state width="1481" height="667" key="GridCell.Tab.0.right/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1583098050779" />
     <state width="1481" height="667" key="GridCell.Tab.0.right/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1583173045381" />
+    <state x="149" y="0" key="SettingsEditor" timestamp="1583352298385">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="149" y="0" key="SettingsEditor/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1583352298385" />
     <state x="527" y="199" key="chooseDestDirectoryDialog" timestamp="1583170375090">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="527" y="199" key="chooseDestDirectoryDialog/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1583096101217" />
     <state x="527" y="199" key="chooseDestDirectoryDialog/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1583170375090" />
+    <state x="394" y="219" key="com.intellij.ide.util.TipDialog" timestamp="1583352350666">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="394" y="219" key="com.intellij.ide.util.TipDialog/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1583352350666" />
     <state x="39" y="86" key="new project wizard" timestamp="1583096632375">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
