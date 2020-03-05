@@ -2,18 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce775799-9096-4ebc-a417-032287e59f62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Categoria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Estoque.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/ItemPedido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/NotaFiscal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/PagamentoBoleto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/PagamentoCartao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Pedido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/SexoCliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/StatusPagamento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/StatusPedido.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Categoria.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Estoque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Estoque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/ItemPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/ItemPedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/NotaFiscal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/NotaFiscal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/PagamentoBoleto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/PagamentoBoleto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/PagamentoCartao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/PagamentoCartao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/banco-de-dados/dados-iniciais.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/banco-de-dados/dados-iniciais.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +119,7 @@
       <workItem from="1583166625014" duration="6328000" />
       <workItem from="1583342484032" duration="5972000" />
       <workItem from="1583352324068" duration="1772000" />
-      <workItem from="1583363179800" duration="2217000" />
+      <workItem from="1583363179800" duration="3851000" />
     </task>
     <servers />
   </component>
