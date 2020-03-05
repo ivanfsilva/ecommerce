@@ -9,6 +9,14 @@ import java.math.BigDecimal;
 
 public class OperacoesComTransacaoTest extends EntityManagerTest {
 
+    // PERSIST - Apenas para persistir (insert - gravar no BD)
+    //           também pega o objeto persistido e coloca em memória do entity manager para
+    //           o objeto ser gerenciado; após ficar com estado gerenciado, se alterar algum atributo do objeto,
+    //           o entity manager fará um update na tabela.
+    // MERGE -   Utilizado para salvar e atualizar (persist e update). O MERGE não coloca em memória para o Entity Manager gerenciar,
+    //           ele cria uma cópia da instância e entrega para o Entity Manager. Então se alterarmos um atributo da instância, como a instância
+    //           não é gerenciada, o objeto não será atualizado.
+
     @Test
     public void impedirOperacaoComBancoDeDados() {
         Produto produto = entityManager.find(Produto.class, 1);
