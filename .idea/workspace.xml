@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce775799-9096-4ebc-a417-032287e59f62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/br/com/ivanfsilva/ecommerce/mapeamentobasico/MapeandoEnumeracoesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/EnderecoEntregaPedido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/br/com/ivanfsilva/ecommerce/mapeamentobasico/MapeamentoObjetoEmbutidoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/PagamentoBoleto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/PagamentoBoleto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/PagamentoCartao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/PagamentoCartao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/ivanfsilva/ecommerce/iniciandocomjpa/OperacoesComTransacaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/ivanfsilva/ecommerce/iniciandocomjpa/OperacoesComTransacaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/banco-de-dados/dados-iniciais.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/banco-de-dados/dados-iniciais.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/ivanfsilva/ecommerce/model/Produto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/ivanfsilva/ecommerce/model/Produto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/br/com/ivanfsilva/ecommerce/iniciandocomjpa/OperacoesComTransacaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/br/com/ivanfsilva/ecommerce/iniciandocomjpa/OperacoesComTransacaoTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +48,7 @@
       <recent name="br.com.ivanfsilva.ecommerce.iniciandocomjpa" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OperacoesComTransacaoTest.inserirOPrimeiroObjeto">
+  <component name="RunManager" selected="JUnit.MapeamentoObjetoEmbutidoTest.analisarMapeamentoObjetoEmbutido">
     <configuration name="IniciarUnidadeDePersistencia" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.ivanfsilva.ecommerce.util.IniciarUnidadeDePersistencia" />
       <module name="ecommerce" />
@@ -77,6 +77,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MapeamentoObjetoEmbutidoTest.analisarMapeamentoObjetoEmbutido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecommerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.ivanfsilva.ecommerce.mapeamentobasico.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.ivanfsilva.ecommerce.mapeamentobasico" />
+      <option name="MAIN_CLASS_NAME" value="br.com.ivanfsilva.ecommerce.mapeamentobasico.MapeamentoObjetoEmbutidoTest" />
+      <option name="METHOD_NAME" value="analisarMapeamentoObjetoEmbutido" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="OperacoesComTransacaoTest.inserirOPrimeiroObjeto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
@@ -95,6 +111,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MapeamentoObjetoEmbutidoTest.analisarMapeamentoObjetoEmbutido" />
         <item itemvalue="JUnit.OperacoesComTransacaoTest.inserirOPrimeiroObjeto" />
         <item itemvalue="JUnit.ConsultandoRegistrosTest" />
         <item itemvalue="Application.IniciarUnidadeDePersistencia" />
@@ -116,7 +133,9 @@
       <workItem from="1583342484032" duration="5972000" />
       <workItem from="1583352324068" duration="1772000" />
       <workItem from="1583363179800" duration="4471000" />
-      <workItem from="1583410824234" duration="2801000" />
+      <workItem from="1583410824234" duration="4967000" />
+      <workItem from="1583592693537" duration="7000" />
+      <workItem from="1584301614206" duration="2288000" />
     </task>
     <servers />
   </component>
@@ -128,25 +147,25 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="530" y="52" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1583094781215" />
-    <state width="1481" height="667" key="GridCell.Tab.0.bottom" timestamp="1583173045381">
+    <state width="1481" height="667" key="GridCell.Tab.0.bottom" timestamp="1584303963662">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1481" height="667" key="GridCell.Tab.0.bottom/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1583098050779" />
+    <state width="1481" height="667" key="GridCell.Tab.0.bottom/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1584303963662" />
     <state width="1481" height="667" key="GridCell.Tab.0.bottom/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1583173045381" />
-    <state width="1481" height="667" key="GridCell.Tab.0.center" timestamp="1583173045381">
+    <state width="1481" height="667" key="GridCell.Tab.0.center" timestamp="1584303963662">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1481" height="667" key="GridCell.Tab.0.center/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1583098050779" />
+    <state width="1481" height="667" key="GridCell.Tab.0.center/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1584303963662" />
     <state width="1481" height="667" key="GridCell.Tab.0.center/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1583173045381" />
-    <state width="1481" height="667" key="GridCell.Tab.0.left" timestamp="1583173045381">
+    <state width="1481" height="667" key="GridCell.Tab.0.left" timestamp="1584303963662">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1481" height="667" key="GridCell.Tab.0.left/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1583098050779" />
+    <state width="1481" height="667" key="GridCell.Tab.0.left/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1584303963662" />
     <state width="1481" height="667" key="GridCell.Tab.0.left/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1583173045381" />
-    <state width="1481" height="667" key="GridCell.Tab.0.right" timestamp="1583173045381">
+    <state width="1481" height="667" key="GridCell.Tab.0.right" timestamp="1584303963662">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1481" height="667" key="GridCell.Tab.0.right/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1583098050779" />
+    <state width="1481" height="667" key="GridCell.Tab.0.right/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1584303963662" />
     <state width="1481" height="667" key="GridCell.Tab.0.right/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1583173045381" />
     <state x="149" y="0" key="SettingsEditor" timestamp="1583352298385">
       <screen x="0" y="0" width="1536" height="864" />
@@ -157,10 +176,10 @@
     </state>
     <state x="527" y="199" key="chooseDestDirectoryDialog/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1583096101217" />
     <state x="527" y="199" key="chooseDestDirectoryDialog/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1583170375090" />
-    <state x="635" y="274" key="com.intellij.ide.util.TipDialog" timestamp="1583410827042">
+    <state x="394" y="219" key="com.intellij.ide.util.TipDialog" timestamp="1583592694481">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="394" y="219" key="com.intellij.ide.util.TipDialog/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1583363185561" />
+    <state x="394" y="219" key="com.intellij.ide.util.TipDialog/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1583592694481" />
     <state x="635" y="274" key="com.intellij.ide.util.TipDialog/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1583410827042" />
     <state x="39" y="86" key="new project wizard" timestamp="1583096632375">
       <screen x="0" y="0" width="1536" height="864" />
