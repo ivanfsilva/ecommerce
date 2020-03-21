@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce775799-9096-4ebc-a417-032287e59f62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/br/com/ivanfsilva/ecommerce/relacionamentos/RelacionamentoManyToManyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/br/com/ivanfsilva/ecommerce/relacionamentos/RelacionamentoOneToOneTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Categoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Produto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/banco-de-dados/dados-iniciais.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/banco-de-dados/dados-iniciais.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/ivanfsilva/ecommerce/model/Categoria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/ivanfsilva/ecommerce/model/Categoria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/ivanfsilva/ecommerce/model/Produto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/ivanfsilva/ecommerce/model/Produto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/PagamentoCartao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/PagamentoCartao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/ecommerce/model/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/ivanfsilva/ecommerce/model/PagamentoCartao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/ivanfsilva/ecommerce/model/PagamentoCartao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/ivanfsilva/ecommerce/model/Pedido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/ivanfsilva/ecommerce/model/Pedido.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +53,7 @@
       <recent name="br.com.ivanfsilva.ecommerce.iniciandocomjpa" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RelacionamentoManyToManyTest.verificarRelacionamento">
+  <component name="RunManager" selected="JUnit.RelacionamentoOneToOneTest.verificarRelacionamento">
     <configuration name="AutoRelacionamentoTest.verificarRelacionamento" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
@@ -87,22 +86,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RelacionamentoManyToOneTest.verificarRelacionamentoItemPedido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ecommerce" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.ivanfsilva.ecommerce.relacionamentos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.ivanfsilva.ecommerce.relacionamentos" />
-      <option name="MAIN_CLASS_NAME" value="br.com.ivanfsilva.ecommerce.relacionamentos.RelacionamentoManyToOneTest" />
-      <option name="METHOD_NAME" value="verificarRelacionamentoItemPedido" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RelacionamentoOneToMany.verificarRelacionamentoPedido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
@@ -114,6 +97,22 @@
       <option name="PACKAGE_NAME" value="br.com.ivanfsilva.ecommerce.relacionamentos" />
       <option name="MAIN_CLASS_NAME" value="br.com.ivanfsilva.ecommerce.relacionamentos.RelacionamentoOneToMany" />
       <option name="METHOD_NAME" value="verificarRelacionamentoPedido" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RelacionamentoOneToOneTest.verificarRelacionamento" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecommerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.ivanfsilva.ecommerce.relacionamentos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.ivanfsilva.ecommerce.relacionamentos" />
+      <option name="MAIN_CLASS_NAME" value="br.com.ivanfsilva.ecommerce.relacionamentos.RelacionamentoOneToOneTest" />
+      <option name="METHOD_NAME" value="verificarRelacionamento" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -137,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RelacionamentoOneToOneTest.verificarRelacionamento" />
         <item itemvalue="JUnit.RelacionamentoManyToManyTest.verificarRelacionamento" />
         <item itemvalue="JUnit.RemovendoEntidadesReferenciadasTest.removerEntidadeRelacionada" />
         <item itemvalue="JUnit.AutoRelacionamentoTest.verificarRelacionamento" />
         <item itemvalue="JUnit.RelacionamentoOneToMany.verificarRelacionamentoPedido" />
-        <item itemvalue="JUnit.RelacionamentoManyToOneTest.verificarRelacionamentoItemPedido" />
       </list>
     </recent_temporary>
   </component>
@@ -166,7 +165,7 @@
       <workItem from="1584564590353" duration="77000" />
       <workItem from="1584564814044" duration="25000" />
       <workItem from="1584710785141" duration="6799000" />
-      <workItem from="1584816153129" duration="4392000" />
+      <workItem from="1584816153129" duration="5217000" />
     </task>
     <servers />
   </component>
@@ -182,25 +181,25 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="449" y="158" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1584564652745" />
-    <state width="1481" height="667" key="GridCell.Tab.0.bottom" timestamp="1584823219173">
+    <state width="1481" height="667" key="GridCell.Tab.0.bottom" timestamp="1584824029354">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1481" height="667" key="GridCell.Tab.0.bottom/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1584823219173" />
+    <state width="1481" height="667" key="GridCell.Tab.0.bottom/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1584824029354" />
     <state width="1481" height="667" key="GridCell.Tab.0.bottom/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1583173045381" />
-    <state width="1481" height="667" key="GridCell.Tab.0.center" timestamp="1584823219173">
+    <state width="1481" height="667" key="GridCell.Tab.0.center" timestamp="1584824029354">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1481" height="667" key="GridCell.Tab.0.center/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1584823219173" />
+    <state width="1481" height="667" key="GridCell.Tab.0.center/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1584824029354" />
     <state width="1481" height="667" key="GridCell.Tab.0.center/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1583173045381" />
-    <state width="1481" height="667" key="GridCell.Tab.0.left" timestamp="1584823219173">
+    <state width="1481" height="667" key="GridCell.Tab.0.left" timestamp="1584824029354">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1481" height="667" key="GridCell.Tab.0.left/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1584823219173" />
+    <state width="1481" height="667" key="GridCell.Tab.0.left/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1584824029354" />
     <state width="1481" height="667" key="GridCell.Tab.0.left/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1583173045381" />
-    <state width="1481" height="667" key="GridCell.Tab.0.right" timestamp="1584823219173">
+    <state width="1481" height="667" key="GridCell.Tab.0.right" timestamp="1584824029354">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1481" height="667" key="GridCell.Tab.0.right/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1584823219173" />
+    <state width="1481" height="667" key="GridCell.Tab.0.right/0.0.1536.864/-2560.13.2560.1080@0.0.1536.864" timestamp="1584824029354" />
     <state width="1481" height="667" key="GridCell.Tab.0.right/0.0.1536.864/0.-1080.1920.1080@0.0.1536.864" timestamp="1583173045381" />
     <state x="149" y="0" key="SettingsEditor" timestamp="1583352298385">
       <screen x="0" y="0" width="1536" height="864" />

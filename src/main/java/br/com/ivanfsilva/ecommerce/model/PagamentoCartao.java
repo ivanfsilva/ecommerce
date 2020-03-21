@@ -15,10 +15,12 @@ public class PagamentoCartao {
 
     @Id
     @EqualsAndHashCode.Include
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "pedido_id")
-    private Integer pedidoId;
+    @OneToOne
+    @JoinColumn(name = "pedido_id")
+    private Pedido pedido;
 
     @Enumerated(EnumType.STRING)
     private StatusPagamento status;
