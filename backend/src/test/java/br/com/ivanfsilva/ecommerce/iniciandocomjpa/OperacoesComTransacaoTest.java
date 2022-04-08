@@ -1,6 +1,5 @@
 package br.com.ivanfsilva.ecommerce.iniciandocomjpa;
 
-import br.com.ivanfsilva.ecommerce.model.Produto;
 import org.junit.Test;
 
 public class OperacoesComTransacaoTest extends EntityManagerTest {
