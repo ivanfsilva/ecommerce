@@ -1,4 +1,4 @@
-package br.com.ivanfsilva.ecommerce.iniciandocomjpa;
+package br.com.ivanfsilva.ecommerce;
 
 import org.junit.After;
 import org.junit.AfterClass;

@@ -1,5 +1,6 @@
 package br.com.ivanfsilva.ecommerce.iniciandocomjpa;
 
+import br.com.ivanfsilva.ecommerce.EntityManagerTest;
 import br.com.ivanfsilva.ecommerce.model.Produto;
 import org.junit.Assert;
 import org.junit.Test;
