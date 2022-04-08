@@ -16,5 +16,4 @@ public class OperacoesComTransacaoTest extends EntityManagerTest {
 
         entityManager.getTransaction().commit();
     }
-    }
 }
