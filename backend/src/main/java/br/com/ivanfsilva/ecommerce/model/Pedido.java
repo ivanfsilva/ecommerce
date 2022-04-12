@@ -1,5 +1,7 @@
 package br.com.ivanfsilva.ecommerce.model;
 
+import br.com.ivanfsilva.ecommerce.listener.GenericoListener;
+import br.com.ivanfsilva.ecommerce.listener.GerarNotaFiscalListener;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,6 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@EntityListeners({GerarNotaFiscalListener.class, GenericoListener.class})
 @Entity
 @Table(name = "pedido")
 public class Pedido {
@@ -50,6 +53,10 @@ public class Pedido {
 
     @Embedded
     private EnderecoEntregaPedido enderecoEntrega;
+
+    public boolean isPago() {
+        return StatusPedido.PAGO.equals(status);
+    }
 
 //    @PrePersist
 //    @PreUpdate
