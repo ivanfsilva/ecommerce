@@ -21,7 +21,7 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
+    @ManyToOne(optional = false) // o JPA utiliza o inner join. O padrão é true e o JPA utiliza o left outer join
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
