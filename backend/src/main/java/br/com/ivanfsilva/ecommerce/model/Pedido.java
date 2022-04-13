@@ -2,7 +2,6 @@ package br.com.ivanfsilva.ecommerce.model;
 
 import br.com.ivanfsilva.ecommerce.listener.GenericoListener;
 import br.com.ivanfsilva.ecommerce.listener.GerarNotaFiscalListener;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,16 +12,10 @@ import java.util.List;
 
 @Getter
 @Setter
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @EntityListeners({GerarNotaFiscalListener.class, GenericoListener.class})
 @Entity
 @Table(name = "pedido")
-public class Pedido {
-
-    @EqualsAndHashCode.Include
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class Pedido extends EntidadeBaseInteger {
 
     @ManyToOne(optional = false) // o JPA utiliza o inner join. O padrão é true e o JPA utiliza o left outer join
     @JoinColumn(name = "cliente_id")
