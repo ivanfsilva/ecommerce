@@ -1,6 +1,10 @@
 insert into produto (id, nome, preco, data_criacao, descricao) values (1, 'Kindle', 499.0, date_sub(sysdate(), interval 1 day), 'Conheça o novo Kindle, agora com iluminação embutida ajustável, que permite que você leia em ambientes abertos ou fechados, a qualquer hora do dia.');
 insert into produto (id, nome, preco, data_criacao, descricao) values (3, 'Câmera GoPro Hero 7', 1400.0, date_sub(sysdate(), interval 1 day), 'Desempenho 2x melhor.');
 
+-- ABAIXO exemplo de como criar um insert para atributo anotado como Lob:
+
+-- insert into produto (descricao, marca, preco, quantidade, image) values ('Stella Artois Pack 6, 330ml', 'Stella Artois', 27.90, 200, lo_import('\stela_pack_icon.png'))
+
 insert into cliente (id, nome) values (1, 'Fernando Medeiros');
 insert into cliente (id, nome) values (2, 'Marcos Mariano');
 
