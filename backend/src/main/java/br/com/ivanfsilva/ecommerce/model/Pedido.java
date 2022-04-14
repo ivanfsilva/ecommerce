@@ -18,7 +18,8 @@ import java.util.List;
 public class Pedido extends EntidadeBaseInteger {
 
     @ManyToOne(optional = false) // o JPA utiliza o inner join. O padrão é true e o JPA utiliza o left outer join
-    @JoinColumn(name = "cliente_id")
+    @JoinColumn(name = "cliente_id", nullable = false,
+            foreignKey = @ForeignKey(name = "fk_pedido_cliente"))
     private Cliente cliente;
 
     @OneToMany(mappedBy = "pedido")
