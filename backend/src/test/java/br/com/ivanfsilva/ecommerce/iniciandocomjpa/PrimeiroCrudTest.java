@@ -3,6 +3,7 @@ package br.com.ivanfsilva.ecommerce.iniciandocomjpa;
 import br.com.ivanfsilva.ecommerce.EntityManagerTest;
 import br.com.ivanfsilva.ecommerce.model.Cliente;
 import br.com.ivanfsilva.ecommerce.model.Produto;
+import br.com.ivanfsilva.ecommerce.model.SexoCliente;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -14,6 +15,8 @@ public class PrimeiroCrudTest extends EntityManagerTest {
 
 //        cliente.setId(3);
         cliente.setNome("José Lucas");
+        cliente.setSexo(SexoCliente.MASCULINO);
+        cliente.setCpf("333");
 
         entityManager.getTransaction().begin();
         entityManager.persist(cliente);
@@ -39,6 +42,8 @@ public class PrimeiroCrudTest extends EntityManagerTest {
 
         cliente.setId(1);
         cliente.setNome("Fernando Medeiros Silva");
+        cliente.setCpf("000");
+        cliente.setSexo(SexoCliente.MASCULINO);
 
         entityManager.getTransaction().begin();
         entityManager.merge(cliente);

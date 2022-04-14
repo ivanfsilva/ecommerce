@@ -1,47 +1,25 @@
 package br.com.ivanfsilva.ecommerce.relacionamentos;
 
 import br.com.ivanfsilva.ecommerce.EntityManagerTest;
-import br.com.ivanfsilva.ecommerce.model.*;
+import br.com.ivanfsilva.ecommerce.model.NotaFiscal;
+import br.com.ivanfsilva.ecommerce.model.PagamentoCartao;
+import br.com.ivanfsilva.ecommerce.model.Pedido;
+import br.com.ivanfsilva.ecommerce.model.StatusPagamento;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Date;
-import java.util.List;
 
 public class RelacionamentoOneToOneTest extends EntityManagerTest {
 
     @Test
-    public void salvarCliente() {
-        Cliente cliente = new Cliente();
-        cliente.setNome("Fernanda Morais");
-
-        entityManager.getTransaction().begin();
-        entityManager.persist(cliente);
-        entityManager.getTransaction().commit();
-
-        entityManager.clear();
-
-        Cliente clienteVerificacao = entityManager.find(Cliente.class, cliente.getId());
-        Assert.assertNotNull(clienteVerificacao.getId());
-    }
-
-    @Test
-    public void buscarPagamentos() {
-        List<Pagamento> pagamentos = entityManager
-                .createQuery("select p from Pagamento p")
-                .getResultList();
-
-        Assert.assertFalse(pagamentos.isEmpty());
-    }
-
-    @Test
-    public void incluirPagamentoPedido() {
+    public void verificarRelacionamento() {
         Pedido pedido = entityManager.find(Pedido.class, 1);
 
         PagamentoCartao pagamentoCartao = new PagamentoCartao();
-        pagamentoCartao.setPedido(pedido);
+        pagamentoCartao.setNumeroCartao("1234");
         pagamentoCartao.setStatus(StatusPagamento.PROCESSANDO);
-        pagamentoCartao.setNumeroCartao("123");
+        pagamentoCartao.setPedido(pedido);
 
         entityManager.getTransaction().begin();
         entityManager.persist(pagamentoCartao);
@@ -51,5 +29,24 @@ public class RelacionamentoOneToOneTest extends EntityManagerTest {
 
         Pedido pedidoVerificacao = entityManager.find(Pedido.class, pedido.getId());
         Assert.assertNotNull(pedidoVerificacao.getPagamento());
+    }
+
+    @Test
+    public void verificarRelacionamentoPedidoNotaFiscal() {
+        Pedido pedido = entityManager.find(Pedido.class, 1);
+
+        NotaFiscal notaFiscal = new NotaFiscal();
+        notaFiscal.setXml("TESTE".getBytes());
+        notaFiscal.setDataEmissao(new Date());
+        notaFiscal.setPedido(pedido);
+
+        entityManager.getTransaction().begin();
+        entityManager.persist(notaFiscal);
+        entityManager.getTransaction().commit();
+
+        entityManager.clear();
+
+        Pedido pedidoVerificacao = entityManager.find(Pedido.class, pedido.getId());
+        Assert.assertNotNull(pedidoVerificacao.getNotaFiscal());
     }
 }

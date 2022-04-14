@@ -28,7 +28,7 @@ public class Produto extends EntidadeBaseInteger {
     @Column(length = 100, nullable = false) // nome varchar(100) not null
     private String nome;
 
-    @Column(columnDefinition = "varchar(275) not null default 'descricao'")
+    @Column(columnDefinition = "varchar(275) default 'descricao'")
     private String descricao;
 
     private BigDecimal preco;
