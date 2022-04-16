@@ -12,7 +12,6 @@ import java.util.Date;
 @Entity
 @Table(name = "nota_fiscal")
 public class NotaFiscal extends EntidadeBaseInteger {
-
     @MapsId
     @OneToOne(optional = false)
     @JoinColumn(name = "pedido_id", nullable = false,
@@ -23,6 +22,7 @@ public class NotaFiscal extends EntidadeBaseInteger {
     @Lob
     private byte[] xml;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "data_emissao", nullable = false)
     private Date dataEmissao;
 
