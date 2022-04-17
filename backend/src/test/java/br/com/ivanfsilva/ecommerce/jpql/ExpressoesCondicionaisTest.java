@@ -2,6 +2,7 @@ package br.com.ivanfsilva.ecommerce.jpql;
 
 import br.com.ivanfsilva.ecommerce.EntityManagerTest;
 import br.com.ivanfsilva.ecommerce.model.Pedido;
+import br.com.ivanfsilva.ecommerce.model.Produto;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -13,6 +14,16 @@ import java.util.Date;
 import java.util.List;
 
 public class ExpressoesCondicionaisTest extends EntityManagerTest {
+
+    @Test
+    public void usarExpressaoDiferente() {
+        String jpql = "select p from Produto p where p.preco <> 100";
+
+        TypedQuery<Produto> typedQuery = entityManager.createQuery(jpql, Produto.class);
+
+        List<Produto> lista = typedQuery.getResultList();
+        Assert.assertFalse(lista.isEmpty());
+    }
 
     @Test
     public void usarBetween() {
