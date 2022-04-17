@@ -10,6 +10,19 @@ import java.util.List;
 public class FuncoesTest extends EntityManagerTest {
 
     @Test
+    public void aplicarFuncaoNativas() {
+        String jpql = "select function('dayname', p.dataCriacao) from Pedido p " +
+                " where function('acima_media_faturamento', p.total) = 1";
+
+        TypedQuery<String> typedQuery = entityManager.createQuery(jpql, String.class);
+
+        List<String> lista = typedQuery.getResultList();
+        Assert.assertFalse(lista.isEmpty());
+
+        lista.forEach(obj -> System.out.println(obj));
+    }
+
+    @Test
     public void totalItensDeUmPedido() {
 
         String jpql = "select sum(ip.precoProduto * ip.quantidade) from ItemPedido ip join ip.pedido p where p.id = :pedidoId";
