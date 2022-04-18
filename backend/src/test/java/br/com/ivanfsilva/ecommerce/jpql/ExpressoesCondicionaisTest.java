@@ -1,6 +1,7 @@
 package br.com.ivanfsilva.ecommerce.jpql;
 
 import br.com.ivanfsilva.ecommerce.EntityManagerTest;
+import br.com.ivanfsilva.ecommerce.model.Cliente;
 import br.com.ivanfsilva.ecommerce.model.Pedido;
 import br.com.ivanfsilva.ecommerce.model.Produto;
 import org.junit.Assert;
@@ -10,10 +11,30 @@ import javax.persistence.TemporalType;
 import javax.persistence.TypedQuery;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
 public class ExpressoesCondicionaisTest extends EntityManagerTest {
+
+    @Test
+    public void usarExpressaoIN() {
+        Cliente cliente1 = new Cliente(); // entityManager.find(Cliente.class, 1);
+        cliente1.setId(1);
+
+        Cliente cliente2 = new Cliente(); // entityManager.find(Cliente.class, 2);
+        cliente2.setId(2);
+
+        List<Cliente> clientes = Arrays.asList(cliente1, cliente2);
+
+        String jpql = "select p from Pedido p where p.cliente in (:clientes)";
+
+        TypedQuery<Pedido> typedQuery = entityManager.createQuery(jpql, Pedido.class);
+        typedQuery.setParameter("clientes", clientes);
+
+        List<Pedido> lista = typedQuery.getResultList();
+        Assert.assertFalse(lista.isEmpty());
+    }
 
     @Test
     public void usarExpressaoCase() {
