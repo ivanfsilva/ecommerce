@@ -1,9 +1,7 @@
 package br.com.ivanfsilva.ecommerce.criteria;
 
 import br.com.ivanfsilva.ecommerce.EntityManagerTest;
-import br.com.ivanfsilva.ecommerce.model.Pagamento;
-import br.com.ivanfsilva.ecommerce.model.Pedido;
-import br.com.ivanfsilva.ecommerce.model.StatusPagamento;
+import br.com.ivanfsilva.ecommerce.model.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,6 +10,26 @@ import javax.persistence.criteria.*;
 import java.util.List;
 
 public class JoinCriteriaTest extends EntityManagerTest {
+
+    @Test
+    public void buscarPedidosComProdutoEspecifico() {
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Pedido> criteriaQuery = criteriaBuilder.createQuery(Pedido.class);
+        Root<Pedido> root = criteriaQuery.from(Pedido.class);
+        Join<ItemPedido, Produto> joinItemPedidoProduto = root
+                .join("itens")
+                .join("produto");
+
+        criteriaQuery.select(root);
+
+        criteriaQuery.where(criteriaBuilder.equal(
+                joinItemPedidoProduto.get("id"), 1));
+
+        TypedQuery<Pedido> typedQuery = entityManager.createQuery(criteriaQuery);
+
+        List<Pedido> lista = typedQuery.getResultList();
+        Assert.assertFalse(lista.isEmpty());
+    }
 
     @Test
     public void usarJoinFetch() {
