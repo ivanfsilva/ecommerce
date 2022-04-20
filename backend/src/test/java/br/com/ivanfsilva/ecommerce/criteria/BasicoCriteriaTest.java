@@ -6,6 +6,7 @@ import br.com.ivanfsilva.ecommerce.model.Produto;
 import org.junit.Assert;
 import org.junit.Test;
 
+import javax.persistence.Tuple;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -14,6 +15,22 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public class BasicoCriteriaTest extends EntityManagerTest {
+
+    @Test
+    public void projetarOResultadoTuple() {
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Tuple> criteriaQuery = criteriaBuilder.createTupleQuery();
+        Root<Produto> root = criteriaQuery.from(Produto.class);
+
+        criteriaQuery.select(criteriaBuilder
+                .tuple(root.get("id").alias("id"), root.get("nome").alias("nome")));
+
+        TypedQuery<Tuple> typedQuery = entityManager.createQuery(criteriaQuery);
+        List<Tuple> lista = typedQuery.getResultList();
+        Assert.assertFalse(lista.isEmpty());
+
+        lista.forEach(t -> System.out.println("ID: " + t.get("id") + ", Nome: " + t.get("nome")));
+    }
 
     @Test
     public void projetarOResultado() {
