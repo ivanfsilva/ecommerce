@@ -15,6 +15,34 @@ import java.util.List;
 public class FuncoesCriteriaTest extends EntityManagerTest {
 
     @Test
+    public void aplicarFuncaoNumero() {
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Object[]> criteriaQuery = criteriaBuilder.createQuery(Object[].class);
+        Root<Pedido> root = criteriaQuery.from(Pedido.class);
+
+        criteriaQuery.multiselect(
+                root.get("id"),
+                criteriaBuilder.abs(criteriaBuilder.prod(root.get("id"), -1)),
+                criteriaBuilder.mod(root.get("id"), 2),
+                criteriaBuilder.sqrt(root.get("total"))
+        );
+
+        criteriaQuery.where(criteriaBuilder.greaterThan(
+                criteriaBuilder.sqrt(root.get("total")), 10.0));
+
+        TypedQuery<Object[]> typedQuery = entityManager.createQuery(criteriaQuery);
+
+        List<Object[]> lista = typedQuery.getResultList();
+        Assert.assertFalse(lista.isEmpty());
+
+        lista.forEach(arr -> System.out.println(
+                arr[0]
+                        + ", abs: " + arr[1]
+                        + ", mod: " + arr[2]
+                        + ", sqrt: " + arr[3]));
+    }
+
+    @Test
     public void aplicarFuncaoData() {
         // current_date, current_time, current_timestamp
 
