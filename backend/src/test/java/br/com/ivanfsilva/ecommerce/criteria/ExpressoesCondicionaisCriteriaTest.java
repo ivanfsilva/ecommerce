@@ -15,6 +15,28 @@ import java.util.List;
 public class ExpressoesCondicionaisCriteriaTest extends EntityManagerTest {
 
     @Test
+    public void usarMaiorMenor() {
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Produto> criteriaQuery = criteriaBuilder.createQuery(Produto.class);
+        Root<Produto> root = criteriaQuery.from(Produto.class);
+
+        criteriaQuery.select(root);
+
+        criteriaQuery.where(
+                criteriaBuilder.greaterThanOrEqualTo(
+                        root.get("preco"), "799"),
+                criteriaBuilder.lessThanOrEqualTo(
+                        root.get("preco"), "3500"));
+
+        TypedQuery<Produto> typedQuery = entityManager.createQuery(criteriaQuery);
+        List<Produto> lista = typedQuery.getResultList();
+        Assert.assertFalse(lista.isEmpty());
+
+        lista.forEach(p -> System.out.println(
+                "ID: " + p.getId() + ", Nome: " + p.getNome() + ", Preço: " + p.getPreco()));
+    }
+
+    @Test
     public void usarIsEmpty() {
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
         CriteriaQuery<Produto> criteriaQuery = criteriaBuilder.createQuery(Produto.class);
