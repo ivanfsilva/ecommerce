@@ -2,6 +2,7 @@ package br.com.ivanfsilva.ecommerce.criteria;
 
 import br.com.ivanfsilva.ecommerce.EntityManagerTest;
 import br.com.ivanfsilva.ecommerce.dto.ProdutoDTO;
+import br.com.ivanfsilva.ecommerce.model.Cliente;
 import br.com.ivanfsilva.ecommerce.model.Pedido;
 import br.com.ivanfsilva.ecommerce.model.Produto;
 import org.junit.Assert;
@@ -17,6 +18,21 @@ import java.util.List;
 
 public class BasicoCriteriaTest extends EntityManagerTest {
 
+    @Test
+    public void ordenarResultados() {
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Cliente> criteriaQuery = criteriaBuilder.createQuery(Cliente.class);
+        Root<Cliente> root = criteriaQuery.from(Cliente.class);
+
+        criteriaQuery.orderBy(criteriaBuilder.desc(root.get("nome")));
+
+        TypedQuery<Cliente> typedQuery = entityManager.createQuery(criteriaQuery);
+
+        List<Cliente> lista = typedQuery.getResultList();
+        Assert.assertFalse(lista.isEmpty());
+
+        lista.forEach(c -> System.out.println(c.getId() + ", " + c.getNome()));
+    }
     @Test
     public void projetarOResultadoDTO() {
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
