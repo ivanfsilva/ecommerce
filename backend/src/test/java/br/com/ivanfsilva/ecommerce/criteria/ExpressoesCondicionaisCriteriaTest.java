@@ -15,6 +15,29 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class ExpressoesCondicionaisCriteriaTest extends EntityManagerTest {
+// o persistence está none para criacao das tabelas. Como ha testes com periodos de datas, em caso de erro
+//    altere para drop-and-crete
+
+    @Test
+    public void usarBetween() {
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Pedido> criteriaQuery = criteriaBuilder.createQuery(Pedido.class);
+        Root<Pedido> root = criteriaQuery.from(Pedido.class);
+
+        criteriaQuery.select(root);
+
+        criteriaQuery.where(criteriaBuilder.between(
+                root.get("dataCriacao"),
+                LocalDateTime.now().minusDays(5).withSecond(0).withMinute(0).withHour(0),
+                LocalDateTime.now()));
+
+        TypedQuery<Pedido> typedQuery = entityManager.createQuery(criteriaQuery);
+        List<Pedido> lista = typedQuery.getResultList();
+        Assert.assertFalse(lista.isEmpty());
+
+        lista.forEach(p -> System.out.println(
+                "ID: " + p.getId() + ", Total: " + p.getTotal()));
+    }
 
     @Test
     public void usarMaiorMenorComDatas() {
