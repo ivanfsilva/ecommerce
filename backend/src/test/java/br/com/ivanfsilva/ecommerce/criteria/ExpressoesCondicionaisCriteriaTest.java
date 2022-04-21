@@ -4,6 +4,7 @@ import br.com.ivanfsilva.ecommerce.EntityManagerTest;
 import br.com.ivanfsilva.ecommerce.model.Cliente;
 import br.com.ivanfsilva.ecommerce.model.Pedido;
 import br.com.ivanfsilva.ecommerce.model.Produto;
+import br.com.ivanfsilva.ecommerce.model.StatusPedido;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -17,6 +18,31 @@ import java.util.List;
 public class ExpressoesCondicionaisCriteriaTest extends EntityManagerTest {
 // o persistence está none para criacao das tabelas. Como ha testes com periodos de datas, em caso de erro
 //    altere para drop-and-crete
+
+    @Test
+    public void usarOperadoresLogicos() {
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Pedido> criteriaQuery = criteriaBuilder.createQuery(Pedido.class);
+        Root<Pedido> root = criteriaQuery.from(Pedido.class);
+
+        criteriaQuery.select(root);
+
+        // SELECT p FROM Pedido p WHERE (status = 'PAGO' OR status = 'AGUARDANDO') AND total > 499
+
+        criteriaQuery.where(
+            criteriaBuilder.or(
+                criteriaBuilder.equal(root.get("status"), StatusPedido.AGUARDANDO),
+                criteriaBuilder.equal(root.get("status"), StatusPedido.PAGO)
+            ),
+                criteriaBuilder.greaterThan(root.get("total"), "499"));
+
+        TypedQuery<Pedido> typedQuery = entityManager.createQuery(criteriaQuery);
+        List<Pedido> lista = typedQuery.getResultList();
+        Assert.assertFalse(lista.isEmpty());
+
+        lista.forEach(p -> System.out.println(
+                "ID: " + p.getId() + ", Total: " + p.getTotal()));
+    }
 
     @Test
     public void usarExpressaoDiferente() {
