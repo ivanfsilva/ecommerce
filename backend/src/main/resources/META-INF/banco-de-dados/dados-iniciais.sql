@@ -2,7 +2,7 @@
 -- insert into produto (descricao, marca, preco, quantidade, image) values ('Stella Artois Pack 6, 330ml', 'Stella Artois', 27.90, 200, lo_import('\stela_pack_icon.png'))
 
 insert into produto (id, nome, preco, data_criacao, descricao) values (1, 'Kindle', 799.0, date_sub(sysdate(), interval 1 day), 'Conheça o novo Kindle, agora com iluminação embutida ajustável, que permite que você leia em ambientes abertos ou fechados, a qualquer hora do dia.');
-insert into produto (id, nome, preco, data_criacao, descricao) values (3, 'Câmera GoPro Hero 7', 1400.0, date_sub(sysdate(), interval 1 day), 'Desempenho 2x melhor.');
+insert into produto (id, nome, preco, data_criacao, descricao) values (3, 'Câmera GoPro Hero 7', 1500.0, date_sub(sysdate(), interval 1 day), 'Desempenho 2x melhor.');
 insert into produto (id, nome, preco, data_criacao, descricao) values (4, 'Câmera Canon 80D', 3500.0, sysdate(), 'O melhor ajuste de foco.');
 insert into produto (id, nome, preco, data_criacao, descricao) values (5, 'Microfone de Lapela', 50.0, sysdate(), 'Produto massa');
 
