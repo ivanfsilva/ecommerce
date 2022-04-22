@@ -1,6 +1,7 @@
 package br.com.ivanfsilva.ecommerce.criteria;
 
 import br.com.ivanfsilva.ecommerce.EntityManagerTest;
+import br.com.ivanfsilva.ecommerce.model.Cliente;
 import br.com.ivanfsilva.ecommerce.model.Pedido;
 import br.com.ivanfsilva.ecommerce.model.Produto;
 import org.junit.Assert;
@@ -15,6 +16,35 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public class SubqueriesCriteriaTest extends EntityManagerTest {
+
+    @Test
+    public void pesquisarSubqueries03() {
+//        Bons clientes.
+//        String jpql = "select c from Cliente c where " +
+//                " 1300 < (select sum(p.total) from Pedido p where p.cliente = c)";
+
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Cliente> criteriaQuery = criteriaBuilder.createQuery(Cliente.class);
+        Root<Cliente> root = criteriaQuery.from(Cliente.class);
+
+        criteriaQuery.select(root);
+
+        Subquery<BigDecimal> subquery = criteriaQuery.subquery(BigDecimal.class);
+        Root<Pedido> subqueryRoot = subquery.from(Pedido.class);
+        subquery.select(criteriaBuilder.sum(subqueryRoot.get("total")));
+        subquery.where(criteriaBuilder.equal(
+                root, subqueryRoot.get("cliente")));
+
+        criteriaQuery.where(criteriaBuilder.greaterThan(subquery, new BigDecimal(1300)));
+
+        TypedQuery<Cliente> typedQuery = entityManager.createQuery(criteriaQuery);
+
+        List<Cliente> lista = typedQuery.getResultList();
+        Assert.assertFalse(lista.isEmpty());
+
+        lista.forEach(obj -> System.out.println(
+                "ID: " + obj.getId() + ", Nome: " + obj.getNome()));
+    }
 
     @Test
     public void pesquisarSubqueries02() {
