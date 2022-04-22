@@ -13,11 +13,53 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.List;
 
 public class ExpressoesCondicionaisCriteriaTest extends EntityManagerTest {
 // o persistence está none para criacao das tabelas. Como ha testes com periodos de datas, em caso de erro
 //    altere para drop-and-crete
+
+    @Test
+    public void usarExpressaoIN02() {
+        Cliente cliente01 = entityManager.find(Cliente.class, 1);
+
+        Cliente cliente02 = new Cliente();
+        cliente02.setId(2);
+
+        List<Cliente> clientes = Arrays.asList(cliente01, cliente02);
+
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Pedido> criteriaQuery = criteriaBuilder.createQuery(Pedido.class);
+        Root<Pedido> root = criteriaQuery.from(Pedido.class);
+
+        criteriaQuery.select(root);
+
+        criteriaQuery.where(root.get("cliente").in(clientes));
+
+        TypedQuery<Pedido> typedQuery = entityManager.createQuery(criteriaQuery);
+
+        List<Pedido> lista = typedQuery.getResultList();
+        Assert.assertFalse(lista.isEmpty());
+    }
+
+    @Test
+    public void usarExpressaoIN01() {
+        List<Integer> ids = Arrays.asList(1, 3, 4, 6);
+
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Pedido> criteriaQuery = criteriaBuilder.createQuery(Pedido.class);
+        Root<Pedido> root = criteriaQuery.from(Pedido.class);
+
+        criteriaQuery.select(root);
+
+        criteriaQuery.where(root.get("id").in(ids));
+
+        TypedQuery<Pedido> typedQuery = entityManager.createQuery(criteriaQuery);
+
+        List<Pedido> lista = typedQuery.getResultList();
+        Assert.assertFalse(lista.isEmpty());
+    }
 
     @Test
     public void usarExpressaoCase() {
