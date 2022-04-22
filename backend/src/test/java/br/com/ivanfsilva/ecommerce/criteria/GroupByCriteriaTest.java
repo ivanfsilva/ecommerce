@@ -7,9 +7,46 @@ import org.junit.Test;
 
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.*;
+import java.math.BigDecimal;
 import java.util.List;
 
 public class GroupByCriteriaTest extends EntityManagerTest {
+
+    @Test
+    public void condicionarAgrupamentoComHaving() {
+//         Total de vendas dentre as categorias que mais vendem.
+//        String jpql = "select cat.nome, sum(ip.precoProduto) from ItemPedido ip " +
+//                " join ip.produto pro join pro.categorias cat " +
+//                " group by cat.id " +
+//                " having sum(ip.precoProduto) > 100 ";
+
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Object[]> criteriaQuery = criteriaBuilder.createQuery(Object[].class);
+        Root<ItemPedido> root = criteriaQuery.from(ItemPedido.class);
+        Join<ItemPedido, Produto> joinProduto = root.join("produto");
+        Join<Produto, Categoria> joinProdutoCategoria = joinProduto.join("categorias");
+
+        criteriaQuery.multiselect(
+                joinProdutoCategoria.get("nome"),
+                criteriaBuilder.sum(root.get("precoProduto")),
+                criteriaBuilder.avg(root.get("precoProduto"))
+        );
+
+        criteriaQuery.groupBy(joinProdutoCategoria.get("id"));
+
+        criteriaQuery.having(criteriaBuilder.greaterThan(
+                criteriaBuilder.avg(
+                        root.get("precoProduto")).as(BigDecimal.class),
+                new BigDecimal(700)));
+
+        TypedQuery<Object[]> typedQuery = entityManager.createQuery(criteriaQuery);
+        List<Object[]> lista = typedQuery.getResultList();
+
+        lista.forEach(arr -> System.out.println(
+                "Nome categoria: " + arr[0]
+                        + ", SUM: " + arr[1]
+                        + ", AVG: " + arr[2]));
+    }
 
     @Test
     public void agruparResultadoComFuncoes() {
