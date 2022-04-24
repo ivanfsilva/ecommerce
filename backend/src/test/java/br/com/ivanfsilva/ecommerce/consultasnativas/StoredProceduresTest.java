@@ -1,13 +1,30 @@
 package br.com.ivanfsilva.ecommerce.consultasnativas;
 
 import br.com.ivanfsilva.ecommerce.EntityManagerTest;
+import br.com.ivanfsilva.ecommerce.model.Cliente;
 import org.junit.Assert;
 import org.junit.Test;
 
 import javax.persistence.ParameterMode;
 import javax.persistence.StoredProcedureQuery;
+import java.util.List;
 
 public class StoredProceduresTest extends EntityManagerTest {
+
+    @Test
+    public void receberListaDaProcedure() {
+        StoredProcedureQuery storedProcedureQuery = entityManager
+                .createStoredProcedureQuery("compraram_acima_media", Cliente.class);
+
+        storedProcedureQuery.registerStoredProcedureParameter(
+                "ano", Integer.class, ParameterMode.IN);
+
+        storedProcedureQuery.setParameter("ano", 2022);
+
+        List<Cliente> lista = storedProcedureQuery.getResultList();
+
+        Assert.assertFalse(lista.isEmpty());
+    }
 
     @Test
     public void usarParametrosInEOut() {
