@@ -1,5 +1,6 @@
 package br.com.ivanfsilva.ecommerce.model;
 
+import br.com.ivanfsilva.ecommerce.dto.ProdutoDTO;
 import br.com.ivanfsilva.ecommerce.listener.GenericoListener;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -26,7 +27,15 @@ import java.util.List;
                                 @FieldResult(name = "dataCriacao", column = "prd_data_criacao"),
                                 @FieldResult(name = "dataUltimaAtualizacao",
                                         column = "prd_data_ultima_atualizacao")
-                        }) })
+                        }) }),
+        @SqlResultSetMapping(name = "ecm_produto.ProdutoDTO",
+                classes = {
+                        @ConstructorResult(targetClass = ProdutoDTO.class,
+                                columns = {
+                                        @ColumnResult(name = "prd_id", type = Integer.class),
+                                        @ColumnResult(name = "prd_nome", type = String.class)
+                                })
+                })
 })
 @NamedQueries({
         @NamedQuery(name = "Produto.listar", query = "select p from Produto p"),
