@@ -2,6 +2,7 @@ package br.com.ivanfsilva.ecommerce.consultasnativas;
 
 import br.com.ivanfsilva.ecommerce.EntityManagerTest;
 import br.com.ivanfsilva.ecommerce.dto.ProdutoDTO;
+import br.com.ivanfsilva.ecommerce.model.Categoria;
 import br.com.ivanfsilva.ecommerce.model.ItemPedido;
 import br.com.ivanfsilva.ecommerce.model.Produto;
 import org.junit.Test;
@@ -9,7 +10,17 @@ import org.junit.Test;
 import javax.persistence.Query;
 import java.util.List;
 
-public class ConsultaNaticaTest extends EntityManagerTest {
+public class ConsultaNativaTest extends EntityManagerTest {
+
+    @Test
+    public void usarAquivoXML() {
+        Query query = entityManager.createNamedQuery("ecm_categoria.listar");
+
+        List<Categoria> lista = query.getResultList();
+
+        lista.stream().forEach(obj -> System.out.println(
+                String.format("Categoria => ID: %s, Nome: %s", obj.getId(), obj.getNome())));
+    }
 
     @Test
     public void usarUmaNamedNativeQuery02() {
