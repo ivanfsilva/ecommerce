@@ -2,6 +2,7 @@ package br.com.ivanfsilva.ecommerce.model;
 
 import br.com.ivanfsilva.ecommerce.dto.ProdutoDTO;
 import br.com.ivanfsilva.ecommerce.listener.GenericoListener;
+import br.com.ivanfsilva.ecommerce.model.converter.BooleanToSimNaoConverter;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -80,6 +81,11 @@ public class Produto extends EntidadeBaseInteger {
 
     @Lob
     private byte[] foto;
+
+    @Convert(converter = BooleanToSimNaoConverter.class)
+    @NotNull
+    @Column(length = 3, nullable = false)
+    private Boolean ativo = Boolean.FALSE;
 
     @ManyToMany
     @JoinTable(name = "produto_categoria",
