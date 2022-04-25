@@ -5,6 +5,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
@@ -30,7 +32,7 @@ public class Cliente extends EntidadeBaseInteger {
     @Column(length = 100, nullable = false)
     private String nome;
 
-    @NotBlank
+    @NotNull
     @Column(length = 14, nullable = false)
     private String cpf;
 
@@ -45,10 +47,12 @@ public class Cliente extends EntidadeBaseInteger {
     @Transient
     private String primeiroNome;
 
+    @NotNull
     @Column(table = "cliente_detalhe", length = 30, nullable = false)
     @Enumerated(EnumType.STRING)
     private SexoCliente sexo;
 
+    @Past
     @Column(name = "data_nascimento", table = "cliente_detalhe")
     private LocalDate dataNascimento;
 
