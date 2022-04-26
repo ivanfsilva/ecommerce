@@ -2,8 +2,13 @@ package br.com.ivanfsilva.ecommerce.model;
 
 import br.com.ivanfsilva.ecommerce.listener.GenericoListener;
 import br.com.ivanfsilva.ecommerce.listener.GerarNotaFiscalListener;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.LazyToOne;
+import org.hibernate.annotations.LazyToOneOption;
+import org.hibernate.engine.spi.PersistentAttributeInterceptable;
+import org.hibernate.engine.spi.PersistentAttributeInterceptor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -16,13 +21,15 @@ import java.util.List;
 
 @Getter
 @Setter
-@EntityListeners({GerarNotaFiscalListener.class, GenericoListener.class})
+@EntityListeners({ GerarNotaFiscalListener.class, GenericoListener.class })
 @Entity
 @Table(name = "pedido")
-public class Pedido extends EntidadeBaseInteger {
+public class Pedido extends EntidadeBaseInteger
+        implements PersistentAttributeInterceptable
+{
 
     @NotNull
-    @ManyToOne(optional = false) // o JPA utiliza o inner join. O padrão é true e o JPA utiliza o left outer join
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "cliente_id", nullable = false,
             foreignKey = @ForeignKey(name = "fk_pedido_cliente"))
     private Cliente cliente;
@@ -44,7 +51,8 @@ public class Pedido extends EntidadeBaseInteger {
     @Column(name = "data_conclusao")
     private LocalDateTime dataConclusao;
 
-    @OneToOne(mappedBy = "pedido")
+    @LazyToOne(LazyToOneOption.NO_PROXY)
+    @OneToOne(mappedBy = "pedido", fetch = FetchType.LAZY)
     private NotaFiscal notaFiscal;
 
     @NotNull
@@ -57,27 +65,79 @@ public class Pedido extends EntidadeBaseInteger {
     @Enumerated(EnumType.STRING)
     private StatusPedido status;
 
-    @OneToOne(mappedBy = "pedido")
+    @LazyToOne(LazyToOneOption.NO_PROXY)
+    @OneToOne(mappedBy = "pedido", fetch = FetchType.LAZY)
     private Pagamento pagamento;
 
     @Embedded
     private EnderecoEntregaPedido enderecoEntrega;
 
+    @Setter(AccessLevel.NONE)
+    @Getter(AccessLevel.NONE)
+    @Transient
+    private PersistentAttributeInterceptor persistentAttributeInterceptor;
+
+    public NotaFiscal getNotaFiscal() {
+        if (this.persistentAttributeInterceptor != null) {
+            return (NotaFiscal) persistentAttributeInterceptor
+                    .readObject(this, "notaFiscal", this. notaFiscal);
+        }
+
+        return this.notaFiscal;
+    }
+
+    public void setNotaFiscal(NotaFiscal notaFiscal) {
+        if (this.persistentAttributeInterceptor != null) {
+            this.notaFiscal = (NotaFiscal) persistentAttributeInterceptor
+                    .writeObject(this, "notaFiscal", this.notaFiscal, notaFiscal);
+        } else {
+            this.notaFiscal = notaFiscal;
+        }
+    }
+
+    public Pagamento getPagamento() {
+        if (this.persistentAttributeInterceptor != null) {
+            return (Pagamento) persistentAttributeInterceptor
+                    .readObject(this, "pagamento", this.pagamento);
+        }
+
+        return this.pagamento;
+    }
+
+    public void setPagamento(Pagamento pagamento) {
+        if (this.persistentAttributeInterceptor != null) {
+            this.pagamento = (Pagamento) persistentAttributeInterceptor
+                    .writeObject(this, "pagamento", this.pagamento, pagamento);
+        } else {
+            this.pagamento = pagamento;
+        }
+    }
+
+    @Override
+    public PersistentAttributeInterceptor $$_hibernate_getInterceptor() {
+        return this.persistentAttributeInterceptor;
+    }
+
+    @Override
+    public void $$_hibernate_setInterceptor(PersistentAttributeInterceptor persistentAttributeInterceptor) {
+        this.persistentAttributeInterceptor = persistentAttributeInterceptor;
+    }
+
     public boolean isPago() {
         return StatusPedido.PAGO.equals(status);
     }
 
-//    @PrePersist
+    //    @PrePersist
 //    @PreUpdate
-public void calcularTotal() {
-    if (itens != null) {
-        total = itens.stream().map(
-                        i -> new BigDecimal(i.getQuantidade()).multiply(i.getPrecoProduto()))
-                .reduce(BigDecimal.ZERO, BigDecimal::add);
-    } else {
-        total = BigDecimal.ZERO;
+    public void calcularTotal() {
+        if (itens != null) {
+            total = itens.stream().map(
+                            i -> new BigDecimal(i.getQuantidade()).multiply(i.getPrecoProduto()))
+                    .reduce(BigDecimal.ZERO, BigDecimal::add);
+        } else {
+            total = BigDecimal.ZERO;
+        }
     }
-}
 
     @PrePersist
     public void aoPersistir() {
