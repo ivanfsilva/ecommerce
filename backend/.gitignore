@@ -40,3 +40,6 @@ build/
 mvnw
 mvnw.cmd
 
+### logs ###
+*.log
+
