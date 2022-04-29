@@ -24,6 +24,9 @@ public class ItemPedido {
     @EmbeddedId
     private ItemPedidoId id;
 
+    @Version
+    private Integer versao;
+
     @NotNull
     @MapsId("pedidoId")
     @ManyToOne(optional = false)
