@@ -1,17 +1,14 @@
 package br.com.ivanfsilva.ecommerce;
 
-import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 
-import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class EntityManagerTest extends EntityManagerFactoryTest {
+public class EntityManagerFactoryTest {
 
-    protected EntityManager entityManager;
+    protected static EntityManagerFactory entityManagerFactory;
 
     @BeforeClass
     public static void setUpBeforeClass() {
@@ -24,14 +21,15 @@ public class EntityManagerTest extends EntityManagerFactoryTest {
         entityManagerFactory.close();
     }
 
-    @Before
-    public void setUp() {
-        entityManager = entityManagerFactory.createEntityManager();
+    public static void log(Object obj, Object... args) {
+        System.out.println(
+                String.format("[LOG " + System.currentTimeMillis() + "] " + obj, args)
+        );
     }
 
-    @After
-    public void tearDown() {
-        entityManager.close();
+    public static void esperar(int segundos) {
+        try {
+            Thread.sleep(segundos * 1000);
+        } catch (InterruptedException e) {}
     }
-
 }
