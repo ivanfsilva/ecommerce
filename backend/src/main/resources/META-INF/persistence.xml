@@ -21,13 +21,23 @@
             <property name="javax.persistence.jdbc.password" value="e5tudO@10" />
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
 
-            <property name="hibernate.multiTenancy" value="SCHEMA" />
+<!--            Tanant por Schema-->
+<!--            <property name="hibernate.multiTenancy" value="SCHEMA" />-->
+
+<!--            Tanant por Database-->
+            <property name="hibernate.multiTenancy" value="DATABASE" />
             <property name="hibernate.tenant_identifier_resolver"
                       value="br.com.ivanfsilva.ecommerce.hibernate.EcmCurrentTenantIdentifierResolver"/>
-            <property name="hibernate.multi_tenant_connection_provider"
-                      value="br.com.ivanfsilva.ecommerce.hibernate.EcmSchemaMultiTenantConnectionProvider"/>
 
-            <property name="hibernate.hikari.maximumPoolSize" value="16" />
+<!--            Tanant por Schema-->
+<!--            <property name="hibernate.multi_tenant_connection_provider"-->
+<!--                      value="br.com.ivanfsilva.ecommerce.hibernate.EcmSchemaMultiTenantConnectionProvider"/>-->
+
+<!--            Tanant por Database-->
+            <property name="hibernate.multi_tenant_connection_provider"
+                      value="br.com.ivanfsilva.ecommerce.hibernate.EcmMachineMultiTenantConnectionProvider"/>
+
+            <property name="hibernate.hikari.maximumPoolSize" value="8" />
             <property name="hibernate.connection.provider_class"
                       value="org.hibernate.hikaricp.internal.HikariCPConnectionProvider" />
 
