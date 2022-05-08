@@ -57,8 +57,8 @@ import java.util.List;
 @EntityListeners({GenericoListener.class})
 @Entity
 @Table(name = "produto",
-        uniqueConstraints = { @UniqueConstraint(name = "unq_nome", columnNames = { "nome" }) },
-        indexes = { @Index(name = "idx_nome", columnList = "nome") })
+        uniqueConstraints = { @UniqueConstraint(name = "unq_produto_nome", columnNames = { "nome" }) },
+        indexes = { @Index(name = "idx_produto_nome", columnList = "nome") })
 public class Produto extends EntidadeBaseInteger {
 
     @PastOrPresent
@@ -74,7 +74,7 @@ public class Produto extends EntidadeBaseInteger {
     @Column(length = 100, nullable = false) // nome varchar(100) not null
     private String nome;
 
-    @Lob
+    //@Lob
     private String descricao;
 
     private BigDecimal preco;

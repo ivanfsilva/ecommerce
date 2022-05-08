@@ -27,7 +27,7 @@ public class ExecutarDDL {
                 "META-INF/banco-de-dados/script-remocao.sql");
 
         propriedades.put("javax.persistence.sql-load-script-source",
-                "META-INF/banco-de-dados/dados-iniciais.sql");
+                "META-INF/banco-de-dados/dados-iniciais.mysql");
 
         EntityManagerFactory entityManagerFactory = Persistence
                 .createEntityManagerFactory("Ecommerce-PU", propriedades);
