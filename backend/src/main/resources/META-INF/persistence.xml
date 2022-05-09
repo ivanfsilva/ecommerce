@@ -15,17 +15,17 @@
         <validation-mode>CALLBACK</validation-mode>
 
         <properties>
-<!--            <property name="javax.persistence.jdbc.url"-->
-<!--                      value="jdbc:mysql://localhost/ecommerce?createDatabaseIfNotExist=true&amp;useTimezone=true&amp;serverTimezone=UTC" />-->
-<!--            <property name="javax.persistence.jdbc.user" value="root" />-->
-<!--            <property name="javax.persistence.jdbc.password" value="e5tudO@10" />-->
-<!--            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />-->
-
             <property name="javax.persistence.jdbc.url"
-                      value="jdbc:postgresql://localhost/ecommerce" />
-            <property name="javax.persistence.jdbc.user" value="postgres" />
+                      value="jdbc:mysql://localhost/ecommerce?createDatabaseIfNotExist=true&amp;useTimezone=true&amp;serverTimezone=UTC" />
+            <property name="javax.persistence.jdbc.user" value="root" />
             <property name="javax.persistence.jdbc.password" value="e5tudO@10" />
-            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+
+<!--            <property name="javax.persistence.jdbc.url"-->
+<!--                      value="jdbc:postgresql://localhost/ecommerce" />-->
+<!--            <property name="javax.persistence.jdbc.user" value="postgres" />-->
+<!--            <property name="javax.persistence.jdbc.password" value="e5tudO@10" />-->
+<!--            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />-->
 
 <!--            Tanant por Schema-->
 <!--            <property name="hibernate.multiTenancy" value="SCHEMA" />-->

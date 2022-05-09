@@ -22,12 +22,12 @@ public class ExecutarDDL {
                 "metadata-then-script");
 
         propriedades.put("javax.persistence.schema-generation.create-script-source",
-                "META-INF/banco-de-dados/script-criacao.sql");
+                "META-INF/banco-de-dados/script-criacao.postgresql");
         propriedades.put("javax.persistence.schema-generation.drop-script-source",
                 "META-INF/banco-de-dados/script-remocao.sql");
 
         propriedades.put("javax.persistence.sql-load-script-source",
-                "META-INF/banco-de-dados/dados-iniciais.mysql");
+                "META-INF/banco-de-dados/dados-iniciais.sql");
 
         EntityManagerFactory entityManagerFactory = Persistence
                 .createEntityManagerFactory("Ecommerce-PU", propriedades);
