@@ -22,7 +22,7 @@ public class ExecutarDDL {
                 "metadata-then-script");
 
         propriedades.put("javax.persistence.schema-generation.create-script-source",
-                "META-INF/banco-de-dados/script-criacao.postgresql");
+                "META-INF/banco-de-dados/script-criacao.sql");
         propriedades.put("javax.persistence.schema-generation.drop-script-source",
                 "META-INF/banco-de-dados/script-remocao.sql");
 
